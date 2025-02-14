@@ -1,13 +1,12 @@
 //your JS code here. If required.
-function removeColor() {
-  // Get the select element by its ID
-  let select = document.getElementById("colorSelect");
+const colorSelect = document.getElementById("colorSelect");
+const removeButton = document.querySelector("input[type='button']");
 
-  // Get the selected option index
-  let selectedIndex = select.selectedIndex;
+removeButton.addEventListener("click", () => {
+    if (colorSelect.selectedIndex !== -1) {
+        colorSelect.remove(colorSelect.selectedIndex);
+    } else {
+        alert("No color selected!");
+    }
+});
 
-  // Remove the selected option if one is selected
-  if (selectedIndex !== -1) {
-    select.remove(selectedIndex);
-  }
-}
